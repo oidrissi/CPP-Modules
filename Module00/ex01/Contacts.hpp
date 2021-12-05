@@ -6,22 +6,20 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 22:33:20 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/04 23:59:05 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/05 17:02:46 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+// #include "Phonebook.hpp"
 #include <string>
 
 class	Contacts
 {
 	public:
 		Contacts(void);
-		Contacts(std::string firstName, std::string lastName, std::string nickname, std::string login, std::string postalAddress, std::string emailAddress, std::string phoneNumber, std::string birthdayDate, std::string favoriteMeal, std::string underwearColor, std::string darkestSecret);
-		Contacts(Contacts const &src);
 		~Contacts(void);
 
-		Contacts &operator=(Contacts const &src);
+		// Contacts::operator std::string(void) const;
 
 		std::string	getFirstName(void) const;
 		std::string	getLastName(void) const;

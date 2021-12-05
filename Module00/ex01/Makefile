@@ -6,7 +6,7 @@
 #    By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 05:30:57 by oidrissi          #+#    #+#              #
-#    Updated: 2021/12/05 00:01:48 by oidrissi         ###   ########.fr        #
+#    Updated: 2021/12/05 16:59:34 by oidrissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@
 CC = clang++
 OBJ = $(SRC:.cpp=.o)
 EXE = Phonebook
-FLAGS = -Wall -Wextra -Werror
-SRC = Phonebook.cpp #Contacts.cpp
+FLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+SRC = Phonebook.cpp Contacts.cpp
 
 all: $(OBJ)
 	$(CC) $(FLAGS) $(SRC) -o $(EXE)

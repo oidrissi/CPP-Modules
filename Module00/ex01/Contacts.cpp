@@ -6,34 +6,67 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 22:36:20 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/04 22:37:59 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/05 16:20:00 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contacts.hpp"
 
-void    setFirstName(std::string firstName)
+Contacts::Contacts()
 {
-    this->firstName = firstName;
+    
 }
 
-void    setLastName(std::string lastName)
+Contacts::~Contacts()
 {
-    this->lastName = lastName;
+    
 }
 
-void    setNickname(std::string nickname)
+void    Contacts::setFirstName(std::string firstName)
 {
-    this->nickname = nickname;
+    this->_firstName = firstName;
 }
 
-void    setPhoneNumber(std::string phoneNumber)
+void    Contacts::setLastName(std::string lastName)
 {
-    this->phoneNumber = phoneNumber;
+    this->_lastName = lastName;
 }
 
-void    setDarkestSecret(std::string darkestSecret)
+void    Contacts::setNickname(std::string nickname)
 {
-    this->darkestSecret = darkestSecret;
+    this->_nickname = nickname;
 }
 
+void    Contacts::setPhoneNumber(std::string phoneNumber)
+{
+    this->_phoneNumber = phoneNumber;
+}
+
+void    Contacts::setDarkestSecret(std::string darkestSecret)
+{
+    this->_darkestSecret = darkestSecret;
+}
+
+std::string Contacts::getFirstName(void) const
+{
+    return (this->_firstName);
+}
+
+std::string Contacts::getLastName(void) const
+{
+    return (this->_lastName);
+}
+
+std::string Contacts::getNickname(void) const
+{
+    return (this->_nickname);
+}
+
+std::string Contacts::getPhoneNumber(void) const
+{
+    return (this->_phoneNumber);
+}
+std::string Contacts::getDarkestSecret(void) const
+{
+    return (this->_darkestSecret);
+}

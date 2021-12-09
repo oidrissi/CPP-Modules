@@ -6,11 +6,13 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 22:33:20 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/05 17:02:46 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/09 10:30:02 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "Phonebook.hpp"
+#ifndef CONTACTS_HPP
+# define CONTACTS_HPP
+
 #include <string>
 
 class	Contacts
@@ -18,9 +20,7 @@ class	Contacts
 	public:
 		Contacts(void);
 		~Contacts(void);
-
-		// Contacts::operator std::string(void) const;
-
+		
 		std::string	getFirstName(void) const;
 		std::string	getLastName(void) const;
 		std::string	getNickname(void) const;
@@ -40,3 +40,5 @@ class	Contacts
 		std::string	_phoneNumber;
 		std::string	_darkestSecret;
 };
+
+#endif

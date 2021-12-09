@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 21:26:27 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/06 14:48:09 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/09 10:22:58 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <limits>
+#include <iomanip>
 #include "Contacts.hpp"
 
 class Phonebook
@@ -27,6 +28,7 @@ class Phonebook
         void add_1(size_t index);
         void addContact(Contacts contacts);
         void search(int n);
+        void display(int n);
         void print();
     private:
         Contacts contacts[8];

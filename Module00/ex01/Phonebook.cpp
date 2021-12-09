@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 21:26:38 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/06 14:46:46 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/09 20:22:28 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,49 +30,28 @@ void    Phonebook::setContacts(Contacts contacts, size_t index)
 void	print_table(std::string str)
 {
 	int l;
-	int i;
 	
-	l = str.size();
-	for (i = 0; i < l; i++)
-	{
-		if (i == 9)
-		{
-			std::cout << ".|";
-			return ;
-		}
-		else
-			std::cout << str[i];	
-	}
-	if (l < 10)
-	{
-		for (int j = i; j < 10; j++)
-			std::cout << " ";
-	}
-	std::cout << "|";
+    l = str.size();
+    if (l <= 10)
+    {
+        std::cout << std::setw(10);
+        std::cout << str;
+        std::cout << "|";
+    }
+    else
+    {
+        std::cout << std::setw(9);
+        std::cout << str.substr(0, 9);
+        std::cout << ".";
+        std::cout << "|";
+    }
 }
 
 void	print_in_table(std::string str)
 {
-	int l;
-	int i;
-	
-	l = str.size();
-	for (i = 0; i < l; i++)
-	{
-		if (i == 9)
-		{
-			std::cout << " |";
-			return ;
-		}
-		else
-			std::cout << str[i];	
-	}
-	if (l < 10)
-	{
-		for (int j = i; j < 10; j++)
-			std::cout << " ";
-	}
-	std::cout << "|";
+	std::cout << std::setw(10);
+    std::cout << str;
+    std::cout << "|";
 }
 
 void	first_row()
@@ -97,6 +76,17 @@ void    Phonebook::search(int n)
     }
 }
 
+void    Phonebook::display(int n)
+{
+    first_row();
+    std::cout << std::endl;
+    print_table(std::to_string(n));
+    print_table(this->contacts[n].getFirstName());
+    print_table(this->contacts[n].getLastName());
+    print_table(this->contacts[n].getNickname());
+    std::cout << std::endl;
+}
+
 void    Phonebook::addContact(Contacts contacts)
 {
     for (int i = 0; i < 8; i++)
@@ -110,6 +100,7 @@ void    Phonebook::addContact(Contacts contacts)
     this->contacts[0] = contacts;
 }
 
+// adds a contact to the phonebook if the index is less than 7, else it replaces the oldest contact
 void    Phonebook::add_1(size_t index)
 {
     Contacts c;
@@ -139,11 +130,14 @@ void    Phonebook::add_1(size_t index)
         setContacts(c, index);
 }
 
-bool is_number(const std::string& s)
+int    is_number(std::string str)
 {
-    std::string::const_iterator it = s.begin();
-    while (it != s.end() && std::isdigit(*it)) ++it;
-    return !s.empty() && it == s.end();
+    for (unsigned int i = 0; i < str.size(); i++)
+    {
+        if (!std::isdigit(str[i]))
+            return 0;
+    }
+    return 1;
 }
 
 int main(int ac, char **av)
@@ -172,7 +166,7 @@ int main(int ac, char **av)
         else if (command == "SEARCH")
         {
             first_row();
-            std::cout << "\n";
+            std::cout << std::endl;
             pb.search(index + 1);
             std::cout << "Input an Index: ";
             std::string ok;
@@ -185,12 +179,11 @@ int main(int ac, char **av)
                 if (n > index)
                 {
                     std::cout << "Invalid, enter an index between 0 and " << index << std::endl;
-                    // std::cin.clear();
-                    // continue ;
-                    // std::cin >> n;
                 }
                 else
-                    pb.search(n + 1);
+                {
+                    pb.display(n);
+                }
             }
         }
         else if (command == "EXIT")

@@ -6,7 +6,7 @@
 #    By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/04 05:30:57 by oidrissi          #+#    #+#              #
-#    Updated: 2021/12/11 09:37:08 by oidrissi         ###   ########.fr        #
+#    Updated: 2021/12/11 09:52:11 by oidrissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ $(EXE): $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(EXE)
 
 clean:
-	rm -rf $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
-	rm -rf $(EXE)
+	rm -f $(EXE)
 
 re: fclean all

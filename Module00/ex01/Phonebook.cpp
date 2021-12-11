@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 21:26:38 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/11 09:47:16 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/11 10:30:31 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,14 +89,6 @@ void    Phonebook::display(int n)
 
 void    Phonebook::addContact(Contacts contacts)
 {
-    for (int i = 0; i < 8; i++)
-    {
-        if (this->contacts[i].getFirstName() == "")
-        {
-            this->contacts[i] = contacts;
-            return ;
-        }
-    }
     this->contacts[0] = contacts;
 }
 
@@ -124,8 +116,11 @@ void    Phonebook::add_1(size_t index)
     std::cout << "Darkest Secret: ";
     getline(std::cin, dsecret);
     c.setDarkestSecret(dsecret);
-    if (index >= 8)
+    if (index > 7)
+    {
         addContact(c);
+        index = 7;
+    }
     else
         setContacts(c, index);
 }
@@ -145,9 +140,10 @@ int main(int ac, char **av)
     (void)av;
     (void)ac;
     Phonebook pb;
+    std::string command;
     int index = -1;
     int n;
-    std::string command;
+    
     if (ac != 1)
     {
         std::cout << "Usage: ./Phonebook" << std::endl;
@@ -170,19 +166,15 @@ int main(int ac, char **av)
             std::cout << "Input an Index: ";
             std::string ok;
             getline(std::cin, ok);
-            if (!is_number(ok))
+            if (!is_number(ok) || ok.size() == 0)
                 std::cout << "Invalid" << std::endl;
             else
             {
                 n = std::stol(ok);
                 if (n > index)
-                {
                     std::cout << "Invalid, enter an index between 0 and " << index << std::endl;
-                }
                 else
-                {
                     pb.display(n);
-                }
             }
         }
         else if (command == "EXIT")

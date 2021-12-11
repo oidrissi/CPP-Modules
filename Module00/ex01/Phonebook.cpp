@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 21:26:38 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/09 20:22:28 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/11 09:47:16 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ int main(int ac, char **av)
     Phonebook pb;
     int index = -1;
     int n;
+    std::string command;
     if (ac != 1)
     {
         std::cout << "Usage: ./Phonebook" << std::endl;
@@ -154,11 +155,9 @@ int main(int ac, char **av)
     }
     while (1)
     {
-        std::string command;
-        std::string v ("ADD");
         std::cout << "Input A Command:";
         getline(std::cin ,command);
-        if (v.compare(command) == 0)
+        if (command == "ADD")
         {
             index++;
             pb.add_1(index);

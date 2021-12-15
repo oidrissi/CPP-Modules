@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 21:26:27 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/12 16:06:13 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/15 13:50:01 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/15 14:33:11 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-#include <string>
 #include <iostream>
-#include <limits>
-#include <iomanip>
-#include "Contacts.hpp"
+#include <string>
 
-class Phonebook
+class Karen
 {
     public:
-		Phonebook();
-		~Phonebook();
-		void setContacts(Contacts contacts, size_t index);
-        void add_1(size_t index);
-        void search(int n);
-        void display(int n);
-        void print();
+        Karen(std::string name);
+        ~Karen();
+        void complain( std::string level );
     private:
-        Contacts contacts[8];
+        void debug( void );
+        void info( void );
+        void warning( void );
+        void error( void );
 };
 
 #endif

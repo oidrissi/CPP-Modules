@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 22:33:20 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/09 10:30:02 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/12 14:33:13 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class	Contacts
 {
 	public:
-		Contacts(void);
-		~Contacts(void);
+		Contacts();
+		~Contacts();
 		
 		std::string	getFirstName(void) const;
 		std::string	getLastName(void) const;

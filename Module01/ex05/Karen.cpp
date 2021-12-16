@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 13:49:59 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/15 20:54:08 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/16 21:34:33 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ int		map_word_to_int(std::string level)
 	{
 		if (level == log_level[i])
 			return (i);
-		else
-			continue ;
+		continue ;
 	}
 	return (-1);
 }
@@ -64,7 +63,7 @@ void    Karen::complain(std::string level)
 	{
 		case 0:
 			this->debug();
-			break;
+			break;	
 		case 1:
 			this->info();
 			break;
@@ -75,7 +74,7 @@ void    Karen::complain(std::string level)
 			this->error();
 			break;
 		case -1:
-			std::cout << "Karen: I don't know what to say about this." << std::endl;
+			std::cout << "I don't know what to say about this." << std::endl;
 			break;
 	}
 }

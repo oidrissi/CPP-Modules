@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 21:09:54 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/15 13:56:18 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/16 21:26:55 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,14 @@ void ft_replace(std::string file, std::string s1, std::string s2)
 int main(int ac, char **av)//main main hjgdhjjgsd
 {
     if (ac == 4)
+    {
+        if (av[2][0] == '\0' || av[3][0] == '\0')
+        {
+            std::cout << "Error: empty string" << std::endl;
+            return (0);
+        }
         ft_replace(av[1], av[2], av[3]);
+    }
     else
         std::cout << "usage: ./replace [file] [s1] [s2]" << std::endl;
     return (0);

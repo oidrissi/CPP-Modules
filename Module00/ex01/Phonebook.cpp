@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 21:26:38 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/11 10:30:31 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/12 16:15:12 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,12 @@ void	print_table(std::string str)
     }
 }
 
-void	print_in_table(std::string str)
-{
-	std::cout << std::setw(10);
-    std::cout << str;
-    std::cout << "|";
-}
-
 void	first_row()
 {
-	print_in_table("INDEX");
-	print_in_table("FIRST NAME");
-	print_in_table("LAST NAME");
-	print_in_table("NICKNAME");
+	print_table("INDEX");
+	print_table("FIRST NAME");
+	print_table("LAST NAME");
+	print_table("NICKNAME");
 }
 
 void    Phonebook::search(int n)
@@ -78,21 +71,13 @@ void    Phonebook::search(int n)
 
 void    Phonebook::display(int n)
 {
-    first_row();
-    std::cout << std::endl;
-    print_table(std::to_string(n));
-    print_table(this->contacts[n].getFirstName());
-    print_table(this->contacts[n].getLastName());
-    print_table(this->contacts[n].getNickname());
-    std::cout << std::endl;
+    std::cout << "First Name :" << this->contacts[n].getFirstName() << std::endl;
+    std::cout << "Last Name :" << this->contacts[n].getLastName() << std::endl;
+    std::cout << "Nickname :" << this->contacts[n].getNickname() << std::endl;
+    std::cout << "Phone number :" << this->contacts[n].getPhoneNumber() << std::endl;
+    std::cout << "Darkest Secret :" << this->contacts[n].getDarkestSecret() << std::endl;
 }
 
-void    Phonebook::addContact(Contacts contacts)
-{
-    this->contacts[0] = contacts;
-}
-
-// adds a contact to the phonebook if the index is less than 7, else it replaces the oldest contact
 void    Phonebook::add_1(size_t index)
 {
     Contacts c;
@@ -117,10 +102,7 @@ void    Phonebook::add_1(size_t index)
     getline(std::cin, dsecret);
     c.setDarkestSecret(dsecret);
     if (index > 7)
-    {
-        addContact(c);
-        index = 7;
-    }
+        exit(0);
     else
         setContacts(c, index);
 }
@@ -167,12 +149,12 @@ int main(int ac, char **av)
             std::string ok;
             getline(std::cin, ok);
             if (!is_number(ok) || ok.size() == 0)
-                std::cout << "Invalid" << std::endl;
+                std::cout << "Invalid index" << std::endl;
             else
             {
                 n = std::stol(ok);
                 if (n > index)
-                    std::cout << "Invalid, enter an index between 0 and " << index << std::endl;
+                    std::cout << "Invalid index" << std::endl;
                 else
                     pb.display(n);
             }

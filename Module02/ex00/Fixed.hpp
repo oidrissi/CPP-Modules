@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/04 21:26:27 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/12 16:06:13 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/17 00:08:42 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/17 00:31:24 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-#include <string>
 #include <iostream>
-#include <limits>
-#include <iomanip>
-#include "Contacts.hpp"
+#include <cmath>
 
-class Phonebook
+class Fixed
 {
     public:
-		Phonebook();
-		~Phonebook();
-		void setContacts(Contacts contacts, size_t index);
-        void add_1(size_t index);
-        void search(int n);
-        void display(int n);
-        void print();
+        Fixed(void);
+        Fixed(Fixed const & src);
+        ~Fixed(void);
+        Fixed operator==(Fixed const & rhs);
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
     private:
-        Contacts contacts[8];
+        int _value;
+        static const int _fractionalBits = 8;
 };
 
 #endif

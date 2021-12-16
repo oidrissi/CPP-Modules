@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 11:12:47 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/16 20:26:18 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/15 13:50:01 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/15 14:33:11 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-#include "Weapon.hpp"
 #include <iostream>
 #include <string>
 
-class HumanB {
+class Karen
+{
     public:
-        HumanB(std::string name);
-        ~HumanB();
-        void setWeapon(Weapon &weapon);
-        void attack();
+        Karen(std::string name);
+        ~Karen();
+        void complain( std::string level );
     private:
-        std::string _name;
-        Weapon *_weapon;
+        void debug( void );
+        void info( void );
+        void warning( void );
+        void error( void );
 };
 
 #endif

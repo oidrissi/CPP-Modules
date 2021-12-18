@@ -6,11 +6,16 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:15:00 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/18 19:27:46 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:35:16 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(void)
+{
+    std::cout << "ClapTrap default constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string _name) : _name(_name)
 {

@@ -6,17 +6,18 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:15:13 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/18 19:31:08 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/18 20:51:44 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap clap("Julio");
-    clap.takeDamage(10);
-    clap.beRepaired(10);
-    clap.attack("Cesar");
+    ScavTrap scav("Scav");
+    scav.takeDamage(10);
+    scav.beRepaired(10);
+    scav.attack("Cesar");
+    scav.guardGate();
     return 0;
 }

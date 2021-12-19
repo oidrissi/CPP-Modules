@@ -6,22 +6,20 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:48:38 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 23:47:22 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/19 23:54:23 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cat.hpp"
 
-Cat::Cat() : _type("Cat"), _brain(new Brain())
+Cat::Cat() : _type("Cat")
 {
     std::cout << "Cat born" << std::endl;
 }
 
 Cat::Cat(const Cat &src)
 {
-    this->_brain = new Brain();
-	for (int i = 0; i < 100; i++)
-		this->_brain->ideas[i] = src._brain->ideas[i];
+    
 }
 
 Cat &Cat::operator = (const Cat &src)

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 14:23:29 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:04:54 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/19 19:48:38 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/19 20:19:24 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "cat.hpp"
 
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+Cat::Cat() : _type("Cat")
 {
-    public:
-        FragTrap();
-        FragTrap(std::string name);
-        FragTrap::FragTrap(FragTrap const & src);
-        ~FragTrap();
+    std::cout << "Cat born" << std::endl;
+}
 
-        void highFivesGuys(void);
-};
+Cat::~Cat()
+{
+    std::cout << "Cat died" << std::endl;
+}
 
-#endif
+void Cat::makeSound() const
+{
+    std::cout << "Meow" << std::endl;
+}
+
+std::string Cat::getType() const
+{
+    return (this->_type);
+}

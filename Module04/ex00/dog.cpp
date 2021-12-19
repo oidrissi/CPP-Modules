@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 14:23:29 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:04:54 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/19 19:52:30 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/19 20:16:02 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "dog.hpp"
 
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+Dog::Dog() : _type("Dog")
 {
-    public:
-        FragTrap();
-        FragTrap(std::string name);
-        FragTrap::FragTrap(FragTrap const & src);
-        ~FragTrap();
+    std::cout << "Dog born" << std::endl;
+}
 
-        void highFivesGuys(void);
-};
+Dog::~Dog()
+{
+    std::cout << "Dog died" << std::endl;
+}
 
-#endif
+void Dog::makeSound() const
+{
+    std::cout << "Woof" << std::endl;
+}
+
+std::string Dog::getType() const
+{
+    return (this->_type);
+}

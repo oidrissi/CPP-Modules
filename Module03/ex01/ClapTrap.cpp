@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:15:00 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/18 20:35:16 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/19 22:00:44 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ ClapTrap::ClapTrap(std::string _name) : _name(_name)
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
 	this->_attackDamage = 0;
+}
+
+ClapTrap::ClapTrap(ClapTrap const & src)
+{
+    std::cout << "Copy Constructor ClapTrap " << src._name << " is born !" << std::endl;
+    *this = src;
 }
 
 ClapTrap::~ClapTrap()

@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:15:17 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/18 20:49:16 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/19 22:04:01 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ClapTrap
     public:
         ClapTrap(void);
         ClapTrap(std::string _name);
+        ClapTrap(ClapTrap const & src);
         ~ClapTrap();
         void attack(std::string const & target);
         void takeDamage(unsigned int amount);

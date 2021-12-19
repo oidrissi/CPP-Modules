@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 00:08:35 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/18 19:10:35 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/19 23:09:16 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Fixed::~Fixed(void)
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed & Fixed::operator=(Fixed const & rhs)
+Fixed & Fixed::operator = (Fixed const & rhs)
 {
     std::cout << "Assignation operator called" << std::endl;
     if (this != &rhs)
@@ -59,8 +59,7 @@ Fixed & Fixed::operator=(Fixed const & rhs)
 }
 
 
-// operator << inserts a floating point representation of the fixed point value into the parameter output stream
-std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
+std::ostream & operator << (std::ostream & o, Fixed const & rhs)
 {
     o << rhs.toFloat();
     return (o);

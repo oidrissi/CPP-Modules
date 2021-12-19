@@ -6,15 +6,15 @@
 #    By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/11 11:04:06 by oidrissi          #+#    #+#              #
-#    Updated: 2021/12/19 17:04:36 by oidrissi         ###   ########.fr        #
+#    Updated: 2021/12/19 20:49:20 by oidrissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = clang++
 OBJ = $(SRC:.cpp=.o)
-EXE = ScavTrap
+EXE = Animals
 FLAGS = -Wall -Wextra -Werror
-SRC = main.cpp
+SRC = main.cpp dog.cpp cat.cpp animal.cpp WrongAnimal.cpp WrongCat.cpp
 
 all: $(EXE)
 

@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:07:21 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 17:15:01 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/19 20:21:45 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 
 class Animal {
     public:
-        Animal(std::string type);
-        ~Animal();
-        void    makeSound();
+        Animal();
+        virtual ~Animal();
+        virtual std::string				getType() const;
+        virtual void					makeSound() const;
     protected:
-        std::string type;
+        std::string _type;
 };
 
 #endif

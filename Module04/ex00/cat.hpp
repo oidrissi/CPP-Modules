@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:10:16 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 17:14:56 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/19 20:37:24 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 
 #include "animal.hpp"
 
-class Cat : public Animal {
+class Cat : public Animal
+{
     public:
-        Cat(std::string name);
+        Cat();
         ~Cat();
+        void makeSound() const;
+        std::string getType() const;
+    protected:
+        std::string _type;
 };
 
 #endif

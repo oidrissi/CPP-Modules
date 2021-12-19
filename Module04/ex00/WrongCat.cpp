@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 14:23:29 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:04:54 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/19 20:39:00 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/19 20:50:22 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "WrongCat.hpp"
 
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+WrongCat::WrongCat() : _type("WrongCat")
 {
-    public:
-        FragTrap();
-        FragTrap(std::string name);
-        FragTrap::FragTrap(FragTrap const & src);
-        ~FragTrap();
+    std::cout << "Wrong Cat born" << std::endl;
+}
 
-        void highFivesGuys(void);
-};
+WrongCat::~WrongCat()
+{
+    std::cout << "Wrong Cat died" << std::endl;
+}
 
-#endif
+void    WrongCat::makeSound() const
+{
+    std::cout << "I'm a Fake Cat" << std::endl;
+}
+
+std::string   WrongCat::getType() const
+{
+    return (this->_type);
+}
+

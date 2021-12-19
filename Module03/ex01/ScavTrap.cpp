@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:32:51 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/18 20:53:25 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/19 22:03:14 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
+}
+
+ScavTrap::ScavTrap(ScavTrap const & src)
+{
+    std::cout << "Copy Constructor ScavTrap " << src._name << " created !" << std::endl;
+    *this = src;
 }
 
 ScavTrap::ScavTrap()

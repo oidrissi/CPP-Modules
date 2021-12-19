@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 14:23:29 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:04:54 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/19 20:38:58 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/19 20:49:40 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include "ClapTrap.hpp"
+#include "WrongAnimal.hpp"
 
-class FragTrap : public ClapTrap
-{
+class WrongCat : public WrongAnimal {
     public:
-        FragTrap();
-        FragTrap(std::string name);
-        FragTrap::FragTrap(FragTrap const & src);
-        ~FragTrap();
-
-        void highFivesGuys(void);
+        WrongCat();
+        ~WrongCat();
+        void makeSound() const;
+        std::string getType() const;
+    protected:
+        std::string _type;
 };
 
 #endif

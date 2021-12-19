@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:32:58 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/18 20:42:54 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/19 22:04:26 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class ScavTrap : public ClapTrap
     public:
         ScavTrap(std::string name);
         ScavTrap();
+        ScavTrap(ScavTrap const & src);
         ~ScavTrap();
         
         void guardGate();

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 14:23:29 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:04:54 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/19 20:45:13 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/19 20:50:18 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "WrongAnimal.hpp"
 
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+WrongAnimal::WrongAnimal() : _type("")
 {
-    public:
-        FragTrap();
-        FragTrap(std::string name);
-        FragTrap::FragTrap(FragTrap const & src);
-        ~FragTrap();
+    std::cout << "Wrong Animal born" << std::endl;
+}
 
-        void highFivesGuys(void);
-};
+WrongAnimal::~WrongAnimal()
+{
+    std::cout << "Wrong Animal died" << std::endl;
+}
 
-#endif
+void    WrongAnimal::makeSound() const
+{
+    std::cout << "Wrong Animal sound" << std::endl;
+}
+
+std::string   WrongAnimal::getType() const
+{
+    return (this->_type);
+}

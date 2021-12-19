@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/18 19:15:17 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:00:14 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/19 20:44:10 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/19 20:50:05 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
-#include <string>
+#include "string"
 
-class ClapTrap
+class WrongAnimal
 {
     public:
-        ClapTrap(void);
-        ClapTrap(std::string _name);
-        ClapTrap(ClapTrap const & src);
-        ~ClapTrap();
-        void attack(std::string const & target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
+        WrongAnimal();
+        virtual ~WrongAnimal();
+        virtual void makeSound() const;
+        virtual std::string getType() const;
     protected:
-        std::string _name;
-        int _hitPoints;
-        int _energyPoints;
-        int _attackDamage;
+        std::string _type;
 };
 
 #endif

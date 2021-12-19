@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 00:08:35 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/18 18:41:21 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/19 14:13:29 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,34 +80,34 @@ Fixed Fixed::operator--(int)
     return (F);
 }
 
-bool    Fixed::operator> (const Fixed& F2)
+bool    Fixed::operator> (const Fixed& Rhs)
 {
-    return (this->toFloat() > F2.toFloat());
+    return (this->toFloat() > Rhs.toFloat());
 }
 
-bool    Fixed::operator< (const Fixed& F2)
+bool    Fixed::operator< (const Fixed& Rhs)
 {
-    return (this->toFloat() < F2.toFloat());
+    return (this->toFloat() < Rhs.toFloat());
 }
 
-bool    Fixed::operator>= (const Fixed& F2)
+bool    Fixed::operator>= (const Fixed& Rhs)
 {
-    return (this->toFloat() >= F2.toFloat());
+    return (this->toFloat() >= Rhs.toFloat());
 }
 
-bool    Fixed::operator<= (const Fixed& F2)
+bool    Fixed::operator<= (const Fixed& Rhs)
 {
-    return (this->toFloat() <= F2.toFloat());
+    return (this->toFloat() <= Rhs.toFloat());
 }
 
-bool    Fixed::operator== (const Fixed& F2)
+bool    Fixed::operator== (const Fixed& Rhs)
 {
-    return (this->toFloat() == F2.toFloat());
+    return (this->toFloat() == Rhs.toFloat());
 }
 
-bool    Fixed::operator!= (const Fixed& F2)
+bool    Fixed::operator!= (const Fixed& Rhs)
 {
-    return (this->toFloat() != F2.toFloat());
+    return (this->toFloat() != Rhs.toFloat());
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs)

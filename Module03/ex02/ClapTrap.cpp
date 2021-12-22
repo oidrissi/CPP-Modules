@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:15:00 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:03:43 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:40:06 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,19 @@ ClapTrap::ClapTrap(ClapTrap const & src)
 ClapTrap::~ClapTrap()
 {
     std::cout << "Constructor ClapTrap " << _name << " is dead !" << std::endl;
+}
+
+ClapTrap & ClapTrap::operator = (ClapTrap const & rhs)
+{
+    std::cout << "Assignation Operator called" << std::endl;
+    if (this != &rhs)
+    {
+        this->_attackDamage = rhs._attackDamage;
+        this->_energyPoints = rhs._energyPoints;
+        this->_hitPoints = rhs._hitPoints;
+        this->_name = rhs._name;
+    }
+    return (*this);
 }
 
 void    ClapTrap::attack(std::string const & target)

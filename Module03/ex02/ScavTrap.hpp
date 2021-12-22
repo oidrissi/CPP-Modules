@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:32:58 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:04:26 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:42:26 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ScavTrap : public ClapTrap
         ScavTrap();
         ScavTrap(ScavTrap const & src);
         ~ScavTrap();
+        ScavTrap & operator = (ScavTrap const & rhs);
         
         void guardGate();
 };

@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 14:23:29 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:04:54 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:43:24 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class FragTrap : public ClapTrap
         FragTrap(std::string name);
         FragTrap::FragTrap(FragTrap const & src);
         ~FragTrap();
+        FragTrap & operator = (FragTrap const & rhs);
 
         void highFivesGuys(void);
 };

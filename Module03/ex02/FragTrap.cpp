@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 14:20:02 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:04:47 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:59:42 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,13 @@ FragTrap::FragTrap()
 FragTrap::~FragTrap()
 {
     std::cout << "Constructor FragTrap Destroyed" << std::endl;
+}
+
+FragTrap & FragTrap::operator = (FragTrap const & rhs)
+{
+    std::cout << "Overloading a FragTrap, please wait" << std::endl;
+    (void)rhs;
+    return (*this);
 }
 
 void    FragTrap::highFivesGuys()

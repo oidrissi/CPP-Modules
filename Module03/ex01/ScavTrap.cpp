@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:32:51 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 22:03:14 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:58:09 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,13 @@ ScavTrap::ScavTrap()
 ScavTrap::~ScavTrap()
 {
     std::cout << "Constructor ScavTrap Destroyed" << std::endl;
+}
+
+ScavTrap & ScavTrap::operator = (ScavTrap const & rhs)
+{
+    std::cout << "Overloading a ScavTrap, please wait" << std::endl;
+    (void)rhs;
+    return (*this);
 }
 
 void    ScavTrap::guardGate()

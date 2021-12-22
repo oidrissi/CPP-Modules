@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 19:15:13 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/18 20:51:44 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/22 11:52:13 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int main(void)
 {
     ScavTrap scav("Scav");
+    ScavTrap rm = scav;
     scav.takeDamage(10);
     scav.beRepaired(10);
     scav.attack("Cesar");

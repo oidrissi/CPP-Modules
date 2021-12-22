@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 15:37:35 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 16:52:12 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/22 12:42:41 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ DiamondTrap::~DiamondTrap()
     std::cout << "Constructed DiamondTrap Destroyed" << std::endl;
 }
 
+DiamondTrap & DiamondTrap::operator = (DiamondTrap const & rhs)
+{
+    std::cout << "Overloading a DiamondTrap, please wait" << std::endl;
+    if (this != &rhs)
+        this->_name = rhs._name;
+    return (*this);
+}
+
 void    DiamondTrap::attack(std::string const & target)
 {
     this->ScavTrap::attack(target);
@@ -36,4 +44,9 @@ void    DiamondTrap::whoAmI()
 {
     std::cout << "Diamond Name : " << this->_name << std::endl;
     std::cout << "ClapTrap Name : " << ClapTrap::_name << std::endl;
+}
+
+void    DiamondTrap::highFivesGuys()
+{
+    this->FragTrap::highFivesGuys();
 }

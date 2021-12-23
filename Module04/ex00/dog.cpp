@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:52:30 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 20:16:02 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/23 16:07:39 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,25 @@
 
 Dog::Dog() : _type("Dog")
 {
-    std::cout << "Dog born" << std::endl;
+    std::cout << _type << " Constructor Called" << std::endl;
+}
+
+Dog::Dog(Dog const & src)
+{
+    *this = src;
 }
 
 Dog::~Dog()
 {
-    std::cout << "Dog died" << std::endl;
+    std::cout << _type << " Destructor Called" << std::endl;
+}
+
+Dog & Dog::operator = (Dog const & rhs)
+{
+    std::cout << "Assignation Operator Called" << std::endl;
+    if (this != &rhs)
+        *this = rhs;
+    return (*this);
 }
 
 void Dog::makeSound() const

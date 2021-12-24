@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:48:38 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/24 13:20:45 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 14:19:59 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ Cat::Cat() : _type("Cat")
     this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const & cat) : _type("")
+Cat::Cat(Cat const & cat) : _type(cat._type)
 {
     std::cout << "Copy Constructor Cat called" << std::endl;
-    *this = cat;
     this->_brain = new Brain();
 }
 
@@ -45,5 +44,5 @@ void Cat::makeSound() const
 
 std::string Cat::getType() const
 {
-    return (this->_type);
+    return Animal::getType();
 }

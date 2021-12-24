@@ -6,13 +6,11 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:04:55 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/24 13:40:30 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 14:19:09 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "animal.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "cat.hpp"
 #include "dog.hpp"
 #include "Brain.hpp"

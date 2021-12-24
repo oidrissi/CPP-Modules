@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:52:30 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/24 13:41:04 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 14:19:56 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog() : _type("Dog")
     this->_brain = new Brain();
 }
 
-Dog::Dog(Dog const & src)
+Dog::Dog(Dog const & src) : _type(src._type)
 {
     *this = src;
     this->_brain = new Brain();
@@ -45,5 +45,5 @@ void Dog::makeSound() const
 
 std::string Dog::getType() const
 {
-    return (this->_type);
+    return Animal::getType();
 }

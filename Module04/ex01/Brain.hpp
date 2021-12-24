@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:14:45 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/24 13:23:51 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 15:00:12 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,12 @@ class Brain
     public:
         Brain();
         Brain(const Brain & Brain);
-        ~Brain();
+        virtual ~Brain();
         Brain & operator = (const Brain &other);
+        void setBrain();
+        virtual std::string getBrain();
 };
+
+std::ostream & operator << (std::ostream &out, Brain & brain);
 
 #endif

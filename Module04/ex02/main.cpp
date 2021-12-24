@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:04:55 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/24 13:39:27 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 13:40:30 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,16 @@
 
 int main()
 {
-    Animal* animals[10];
-    for (int i = 0; i < 10; i++)
-    {
-        if (i % 2 == 0)
-            animals[i] = new Dog();
-        else
-            animals[i] = new Cat();
-    }
-    for (int i = 0; i < 10; i++)
-        delete animals[i];
-    // while (1)
-    // {
-        
-    // }
-    return 0;
+    // const Animal *i = new Animal(); // Should not compile
+    const Animal *j = new Dog();
+    const Animal *k = new Cat();
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << k->getType() << " " << std::endl;
+    j->makeSound();
+    k->makeSound();
+    // i->makeSound(); // should not compile
+    delete j;
+    delete k;
+    // delete i; // should not compile
+    return (0);
 }

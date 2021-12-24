@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:10:16 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 23:39:00 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 12:14:07 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ class Cat : public Animal
     public:
         Cat();
         ~Cat();
-        Cat(const Cat &src);
-        Cat & operator = (const Cat &src);
+        Cat(Cat const & Cat);
+        Cat & operator = (Cat const & cat);
         void makeSound() const;
         std::string getType() const;
     protected:
         std::string _type;
     private:
-        Brain _brain;
+        Brain *_brain;
 };
 
 #endif

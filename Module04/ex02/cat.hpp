@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 20:45:13 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 20:50:18 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/19 17:10:16 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/24 12:14:07 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-WrongAnimal::WrongAnimal() : _type("")
-{
-    std::cout << "Wrong Animal born" << std::endl;
-}
+#include "animal.hpp"
+#include "Brain.hpp"
 
-WrongAnimal::~WrongAnimal()
+class Cat : public Animal
 {
-    std::cout << "Wrong Animal died" << std::endl;
-}
+    public:
+        Cat();
+        ~Cat();
+        Cat(Cat const & Cat);
+        Cat & operator = (Cat const & cat);
+        void makeSound() const;
+        std::string getType() const;
+    protected:
+        std::string _type;
+    private:
+        Brain *_brain;
+};
 
-void    WrongAnimal::makeSound() const
-{
-    std::cout << "Wrong Animal sound" << std::endl;
-}
-
-std::string   WrongAnimal::getType() const
-{
-    return (this->_type);
-}
+#endif

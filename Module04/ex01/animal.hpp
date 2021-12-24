@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:07:21 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 20:21:45 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 12:27:43 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 class Animal {
     public:
         Animal();
+        Animal(Animal const & src);
+        Animal & operator = (const Animal & rhs);
         virtual ~Animal();
         virtual std::string				getType() const;
         virtual void					makeSound() const;

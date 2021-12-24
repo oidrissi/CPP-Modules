@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:52:30 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/23 16:07:39 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 12:11:08 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Dog & Dog::operator = (Dog const & rhs)
 
 void Dog::makeSound() const
 {
-    std::cout << "Woof" << std::endl;
+    std::cout << "Dog: Woof" << std::endl;
 }
 
 std::string Dog::getType() const

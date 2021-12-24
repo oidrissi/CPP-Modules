@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:46:53 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/24 12:11:22 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 13:35:39 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Animal::Animal() : _type("")
 {
-    std::cout << "Animal Constructor Called" << std::endl;
+    std::cout << "Default Animal Constructor Called" << std::endl;
 }
 
 Animal::Animal(Animal const & src)

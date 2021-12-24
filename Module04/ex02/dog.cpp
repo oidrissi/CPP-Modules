@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   animal.cpp                                         :+:      :+:    :+:   */
+/*   dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 19:46:53 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/24 12:11:22 by oidrissi         ###   ########.fr       */
+/*   Created: 2021/12/19 19:52:30 by oidrissi          #+#    #+#             */
+/*   Updated: 2021/12/24 13:41:04 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "animal.hpp"
+#include "dog.hpp"
 
-Animal::Animal() : _type("")
+Dog::Dog() : _type("Dog")
 {
-    std::cout << "Animal Constructor Called" << std::endl;
+    std::cout << "Default " << _type << " Constructor Called" << std::endl;
+    this->_brain = new Brain();
 }
 
-Animal::Animal(Animal const & src)
+Dog::Dog(Dog const & src)
 {
-    std::cout << "Copy Animal Constructor Called" << std::endl;
     *this = src;
+    this->_brain = new Brain();
 }
 
-Animal::~Animal()
+Dog::~Dog()
 {
-    std::cout << "Animal Destructor Called" << std::endl;
+    std::cout << _type << " Destructor Called" << std::endl;
+    delete this->_brain;
 }
 
-Animal & Animal::operator = (const Animal & rhs)
+Dog & Dog::operator = (Dog const & rhs)
 {
     std::cout << "Assignation Operator Called" << std::endl;
     if (this != &rhs)
@@ -36,12 +38,12 @@ Animal & Animal::operator = (const Animal & rhs)
     return (*this);
 }
 
-void    Animal::makeSound() const
+void Dog::makeSound() const
 {
-    std::cout << "Animal: Standard Animal sound" << std::endl;
+    std::cout << "Dog: Woof" << std::endl;
 }
 
-std::string    Animal::getType() const
+std::string Dog::getType() const
 {
     return (this->_type);
 }

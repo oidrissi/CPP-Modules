@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:52:30 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/19 23:45:43 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 14:02:53 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,36 @@
 
 Dog::Dog() : _type("Dog")
 {
-    std::cout << "Dog born" << std::endl;
+    std::cout << _type << " Default Constructor Called" << std::endl;
+    this->_brain = new Brain();
 }
 
-Dog::Dog(const Dog &src)
+Dog::Dog(Dog const & src)
 {
+    *this = src;
     this->_brain = new Brain();
-    for (int i = 0; i < 100; i++)
-        this._brain->ideas[i] = src._brain->ideas[i];
 }
 
 Dog::~Dog()
 {
-    std::cout << "Dog died" << std::endl;
+    std::cout << _type << " Destructor Called" << std::endl;
+    delete this->_brain;
+}
+
+Dog & Dog::operator = (Dog const & rhs)
+{
+    std::cout << "Assignation Operator Called" << std::endl;
+    if (this != &rhs)
+        *this = rhs;
+    return (*this);
 }
 
 void Dog::makeSound() const
 {
-    std::cout << "Woof" << std::endl;
+    std::cout << "Dog: Woof" << std::endl;
 }
 
 std::string Dog::getType() const
 {
-    return (this->_type);
+    return Animal::getType();
 }

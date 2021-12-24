@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 20:45:13 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/23 16:08:14 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 14:08:51 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,13 @@ WrongAnimal::~WrongAnimal()
 
 void    WrongAnimal::makeSound() const
 {
-    std::cout << "Wrong Animal sound" << std::endl;
+    std::cout << "Wrong Animal Sound: WaZaaaaaa" << std::endl;
+}
+
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
+{
+    this->_type = rhs._type;
+    return *this;
 }
 
 std::string   WrongAnimal::getType() const

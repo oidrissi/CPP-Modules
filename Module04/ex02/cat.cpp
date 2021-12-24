@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 19:48:38 by oidrissi          #+#    #+#             */
-/*   Updated: 2021/12/24 12:11:13 by oidrissi         ###   ########.fr       */
+/*   Updated: 2021/12/24 13:20:45 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 Cat::Cat() : _type("Cat")
 {
     std::cout << "Default Cat Constructor called" << std::endl;
+    this->_brain = new Brain();
 }
 
 Cat::Cat(Cat const & cat) : _type("")
 {
     std::cout << "Copy Constructor Cat called" << std::endl;
     *this = cat;
+    this->_brain = new Brain();
 }
 
 Cat::~Cat()
 {
     std::cout << "Cat Destructor Called" << std::endl;
+    delete this->_brain;
 }
 
 Cat & Cat::operator = (Cat const & cat)

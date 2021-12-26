@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang++
+CC = g++
 OBJ = $(SRC:.cpp=.o)
 EXE = Animals
 FLAGS = -Wall -Wextra -Werror

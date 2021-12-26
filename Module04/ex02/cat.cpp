@@ -18,7 +18,7 @@ Cat::Cat() : _type("Cat")
     this->_brain = new Brain();
 }
 
-Cat::Cat(Cat const & cat) : _type(cat._type)
+Cat::Cat(Cat const & cat) : Animal(cat._type)
 {
     std::cout << "Copy Constructor Cat called" << std::endl;
     this->_brain = new Brain();

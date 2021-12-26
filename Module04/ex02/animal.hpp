@@ -18,14 +18,15 @@
 
 class Animal {
     public:
-        Animal(Animal const & src);
-        Animal & operator = (const Animal & rhs);
-        virtual ~Animal();
         virtual std::string				getType() const;
         virtual void					makeSound() const;
     protected:
         std::string _type;
         Animal();
+        Animal(std::string const & type);
+        Animal(Animal const & src);
+        Animal & operator = (const Animal & rhs);
+        virtual ~Animal();
 };
 
 #endif

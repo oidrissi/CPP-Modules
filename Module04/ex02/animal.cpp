@@ -17,6 +17,11 @@ Animal::Animal() : _type("")
     std::cout << "Default Animal Constructor Called" << std::endl;
 }
 
+Animal::Animal(std::string const & type) : _type(type)
+{
+     std::cout << "Animal Constructor Called" << std::endl;
+}
+
 Animal::Animal(Animal const & src) : _type(src._type)
 {
     std::cout << "Copy Animal Constructor Called" << std::endl;

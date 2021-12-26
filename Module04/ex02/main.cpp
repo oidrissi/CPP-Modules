@@ -18,16 +18,16 @@
 
 int main()
 {
-    // const Animal *i = new Animal(); // Should not compile
+    const Animal *i = new Animal("Cat"); // Should not compile
     const Animal *j = new Dog();
     const Animal *k = new Cat();
     std::cout << j->getType() << " " << std::endl;
     std::cout << k->getType() << " " << std::endl;
     j->makeSound();
     k->makeSound();
-    // i->makeSound(); // should not compile
+    i->makeSound(); // should not compile
     delete j;
     delete k;
-    // delete i; // should not compile
+    delete i; // should not compile
     return (0);
 }

@@ -82,16 +82,25 @@ std::string Form::getName() const
 
 bool    Form::getSigned() const
 {
-    return _signed;
+    if (_signed == true)
+        return true;
+    else
+        return false;
 }
 
 void    Form::beSigned(Bureaucrat const &b)
 {
-    if (b.getGrade() > _gradeToSign)
-        throw Form::GradeTooLowException();
-    if (b.getGrade() < 1)
-        throw Form::GradeTooHighException();
     _signed = true;
+    if (b.getGrade() > _gradeToSign)
+    {
+        throw Form::GradeTooLowException();
+        _signed = false;
+    }
+    if (b.getGrade() < 1)
+    {
+        throw Form::GradeTooHighException();
+        _signed = false;
+    }
 }
 
     /* GradeTooHighException */
@@ -107,7 +116,7 @@ const char* Form::GradeTooHighException::what() const throw()
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-    return ("Grade is too low");
+    return ("Grade is too low to be signed");
 }
 
     /* NotSignedException */

@@ -13,7 +13,7 @@ Bureaucrat::Bureaucrat() : _name(""), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name)
 {
-    std::cout << "Bureaucrat" << name << "constructor called" << std::endl;
+    std::cout << "Bureaucrat " << name << " constructor called" << std::endl;
     if (grade > 150)
         throw Bureaucrat::GradeTooLowException();
     if (grade < 1)
@@ -125,10 +125,9 @@ void Bureaucrat::decrementGrade()
 std::string Bureaucrat::signForm(Form const &form)
 {
     if (form.getSigned() == true)
-        return ("Form signed");
-    if (form.getGradeToSign() > _grade)
-        return ("Grade is too low");
-    if (form.getGradeToSign() < _grade)
-        return ("Grade is too high");
+        return (this->getName() + " signed " + form.getName());
+    else
+        std::cout << "WHAT THE FUCK" << std::endl;
+        //return ("Bureaucrat " + this->getName() + "'s Form not signed " + "Grade" + std::to_string(this->getGrade()) + "out of range");
     return ("Form not signed for some reason");
 }

@@ -139,5 +139,5 @@ void Bureaucrat::executeForm(Form const & form)
     if (form.getSigned() == true)
         form.execute(*this);
     else
-        std::cout << "Bureaucrat " + this->getName() + "'s Form not signed " + "Grade" + std::to_string(this->getGrade()) + "out of range"); << std::endl;
+        std::cout << "Bureaucrat " + this->getName() + "'s Form not signed " + "Grade" + std::to_string(this->getGrade()) + "out of range" << std::endl;
 }

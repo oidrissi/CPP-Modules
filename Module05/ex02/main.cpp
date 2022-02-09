@@ -17,7 +17,7 @@ int main()
     std::cout << b << std::endl;
     std::cout << d << std::endl;
     std::cout << "-------------------------------------------\n";
-    a.setFormSigned();
+    a.getSigned();
     std::cout << a << std::endl;
     std::cout << "-------------------------------------------\n";
     try
@@ -28,7 +28,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-    b.setFormSigned();
+    b.getSigned();
     std::cout << b << std::endl;
     std::cout << "-------------------------------------------\n";
     try
@@ -40,7 +40,7 @@ int main()
         std::cout << e.what() << std::endl;
     }
     std::cout << "-------------------------------------------\n";
-    d.setFormSigned();
+    d.getSigned();
     std::cout << d << std::endl;
     std::cout << "-------------------------------------------\n";
     try

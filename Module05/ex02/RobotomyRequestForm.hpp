@@ -11,7 +11,7 @@ class RobotomyRequestForm : public Form
         std::string const _target;
     public:
         RobotomyRequestForm();
-        RobotomyRequestForm(std::string const name);
+        RobotomyRequestForm(std::string const target);
         RobotomyRequestForm(RobotomyRequestForm const &src);
         ~RobotomyRequestForm();
         RobotomyRequestForm & operator = (RobotomyRequestForm const & rhs);

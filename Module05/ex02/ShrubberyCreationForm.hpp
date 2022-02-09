@@ -5,6 +5,7 @@
 #include "Form.hpp"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 class Bureaucrat;
 

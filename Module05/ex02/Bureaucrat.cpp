@@ -124,10 +124,10 @@ void Bureaucrat::decrementGrade()
 
 std::string Bureaucrat::signForm(Form const &form)
 {
-    if (form.getSigned() == true)
+    if (!form.getSigned())
         return (this->getName() + " signed " + form.getName());
     else
-        return ("Bureaucrat " + this->getName() + "'s Form not signed " + "Grade" + std::to_string(this->getGrade()) + "out of range");
+        return ("Bureaucrat " + this->getName() + "'s Form not signed " + "Grade" + std::to_string(this->getGrade()) + " too low or too high");
     return ("Form not signed for some reason");
 }
 
@@ -139,5 +139,5 @@ void Bureaucrat::executeForm(Form const & form)
     if (form.getSigned() == true)
         form.execute(*this);
     else
-        std::cout << "Bureaucrat " + this->getName() + "'s Form not signed " + "Grade" + std::to_string(this->getGrade()) + "out of range" << std::endl;
+        std::cout << "Bureaucrat " + this->getName() + "'s Form not executed " + "Grade " + std::to_string(this->getGrade()) + " too low or too high" << std::endl;
 }

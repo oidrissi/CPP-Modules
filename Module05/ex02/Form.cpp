@@ -50,10 +50,6 @@ Form::Form(Form const &src) : _name(src._name), _signed(src._signed), _gradeToSi
 
 int Form::getGradeToSign() const
 {
-    if (_gradeToSign > 150)
-        throw Form::GradeTooLowException();
-    if (_gradeToSign < 1)
-        throw Form::GradeTooHighException();
     return _gradeToSign;
 }
 
@@ -62,10 +58,6 @@ int Form::getGradeToSign() const
 
 int Form::getGradeToExecute() const
 {
-    if (_gradeToExecute > 150)
-        throw Form::GradeTooLowException();
-    if (_gradeToExecute < 1)
-        throw Form::GradeTooHighException();
     return _gradeToExecute;
 }
 
@@ -90,16 +82,15 @@ bool    Form::getSigned() const
 
 void    Form::beSigned(Bureaucrat const &b)
 {
-    _signed = true;
-    if (b.getGrade() > _gradeToSign)
+    try
     {
-        throw Form::GradeTooLowException();
-        _signed = false;
+        if (b.getGrade() > this->getGradeToSign())
+            throw Form::GradeTooLowException();
+        this->_signed = true;
     }
-    if (b.getGrade() < 1)
+    catch (std::exception &e)
     {
-        throw Form::GradeTooHighException();
-        _signed = false;
+        std::cout << e.what() << std::endl;
     }
 }
 
@@ -116,7 +107,7 @@ const char* Form::GradeTooHighException::what() const throw()
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-    return ("Grade is too low to be signed");
+    return ("Grade is too low to be signed or executed");
 }
 
     /* NotSignedException */
@@ -130,12 +121,10 @@ const char* Form::NotSignedException::what() const throw()
     /* Operator = overload */
     /* -------------------- */
 
-Form & Form::operator = (Form const & rhs)
+Form &Form::operator= (const Form &obj)
 {
-    std::cout << "Form operator = overload called" << std::endl;
-    if (this != &rhs)
-        _signed = rhs._signed;
-    return *this;
+    (void)obj;
+    return (*this);
 }
 
     /* Operator << overload */
@@ -154,9 +143,9 @@ std::ostream & operator << (std::ostream & o, Form const & rhs)
 
 void Form::execute(Bureaucrat const & executor) const
 {
-    if (_signed == false)
+    if (!_signed)
         throw Form::NotSignedException();
-    if (executor.getGrade() > _gradeToExecute)
+    if (executor.getGrade() < _gradeToExecute)
         throw Form::GradeTooLowException();
     std::cout << "Form executed" << std::endl;
 }

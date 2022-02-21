@@ -6,20 +6,18 @@
 
 int main()
 {
-    Bureaucrat  c("eliass", 4);
-    ShrubberyCreationForm   a("reda_home");
-    RobotomyRequestForm     b("elias_home");
-    PresidentialPardonForm  d("rayan_house");
+    Bureaucrat  c("Abby", 80);
+    ShrubberyCreationForm   a("Exam_01");
+    RobotomyRequestForm     b("Exam_02");
+    PresidentialPardonForm  d("Exam_03");
 
-    std::cout << "-------------------------------------------\n";
+    std::cout << "-------------------------------------------" << std::endl;
     std::cout << a << std::endl;
     std::cout << c << std::endl;
-    std::cout << b << std::endl;
-    std::cout << d << std::endl;
-    std::cout << "-------------------------------------------\n";
-    a.getSigned();
-    std::cout << a << std::endl;
-    std::cout << "-------------------------------------------\n";
+    // std::cout << d << std::endl;
+    std::cout << "-------------------------------------------" << std::endl;
+    a.beSigned(c);
+    std::cout << "-------------------------------------------" << std::endl;
     try
     {
         a.execute(c);
@@ -28,9 +26,9 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-    b.getSigned();
+    std::cout << "-------------------------------------------" << std::endl;
     std::cout << b << std::endl;
-    std::cout << "-------------------------------------------\n";
+    b.beSigned(c);
     try
     {
         b.execute(c);
@@ -39,10 +37,10 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << "-------------------------------------------\n";
-    d.getSigned();
+    std::cout << "-------------------------------------------" << std::endl;
+    d.beSigned(c);
     std::cout << d << std::endl;
-    std::cout << "-------------------------------------------\n";
+    std::cout << "-------------------------------------------" << std::endl;
     try
     {
         d.execute(c);
@@ -51,8 +49,7 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << "-------------------------------------------\n";
-    c.executeForm(a);
-    std::cout << "-------------------------------------------\n";
+    std::cout << "-------------------------------------------" << std::endl;
+    // std::cout << "-------------------------------------------" << std::endl;
     return(0);
 }

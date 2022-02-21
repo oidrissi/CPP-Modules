@@ -7,13 +7,8 @@ RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm", 72, 45)
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const target) : Form("RobotomyRequestForm", 72, 45)
 {
-    for (int i = 0; i < 4; i++)
-    {
-        if (i % 2 == 0)
-            std::cout << target << "has been robotomized successfully" << std::endl;
-        else
-            std::cout << target << "has not been robotomized" << std::endl;
-    }
+    (void)target;
+    std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : Form(src)
@@ -23,6 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : Form(
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+    std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs)
@@ -33,16 +29,23 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-    if (this->getSigned() == false)
-        throw Form::NotSignedException();
-    if (executor.getGrade() > this->getGradeToExecute())
-        throw Form::GradeTooLowException();
-    for (int i = 0; i < 4; i++)
+    try
     {
-        if (i % 2 == 0)
-            std::cout << this->_target << "has been robotomized successfully" << std::endl;
-        else
-            std::cout << this->_target << "has not been robotomized" << std::endl;
+        if (this->getSigned() == false)
+            throw Form::NotSignedException();
+        if (executor.getGrade() > this->getGradeToExecute())
+            throw Form::GradeTooLowException();
+        for (int i = 0; i < 4; i++)
+        {
+            if (i % 2 == 0)
+                std::cout << this->_target << "has been robotomized successfully" << std::endl;
+            else
+                std::cout << this->_target << "has not been robotomized" << std::endl;
+        }
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
     }
 }
 

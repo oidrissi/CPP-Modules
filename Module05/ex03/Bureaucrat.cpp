@@ -124,7 +124,7 @@ void Bureaucrat::decrementGrade()
 
 std::string Bureaucrat::signForm(Form &form)
 {
-    if (_grade > form.getGradeToSign())
+    if (_grade < form.getGradeToSign())
     {
         form.beSigned(*this);
         return _name + " signs " + form.getName();

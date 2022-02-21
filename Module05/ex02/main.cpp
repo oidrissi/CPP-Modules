@@ -12,9 +12,9 @@ int main()
     PresidentialPardonForm  d("Exam_03");
 
     std::cout << "-------------------------------------------" << std::endl;
-    std::cout << a << std::endl;
     std::cout << c << std::endl;
-    // std::cout << d << std::endl;
+    std::cout << "-------------------------------------------" << std::endl;
+    std::cout << a << std::endl;
     std::cout << "-------------------------------------------" << std::endl;
     a.beSigned(c);
     std::cout << "-------------------------------------------" << std::endl;

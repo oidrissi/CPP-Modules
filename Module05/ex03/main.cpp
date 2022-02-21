@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 05:45:17 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/21 06:26:49 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/21 19:01:13 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+    delete rrf;
 }

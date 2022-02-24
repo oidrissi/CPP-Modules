@@ -6,14 +6,14 @@
 #    By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 08:18:39 by oidrissi          #+#    #+#              #
-#    Updated: 2022/02/24 08:25:13 by oidrissi         ###   ########.fr        #
+#    Updated: 2022/02/24 13:02:13 by oidrissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++
 OBJ = $(SRC:.cpp=.o)
 EXE = whatever
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std::c++98
 SRC = main.cpp
 
 all: $(EXE)

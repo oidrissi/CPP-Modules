@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conversion_scalar_types.hpp                        :+:      :+:    :+:   */
+/*   conv.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:47:31 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/23 23:44:13 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/24 01:51:32 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 # define CONVERSION_SCALAR_TYPES_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <sstream>
 #include <ctype.h>
 #include <stdlib.h>
-#include "convert.cpp"
+#include <cmath>
+#include <limits>
+
 
 class converter
 {

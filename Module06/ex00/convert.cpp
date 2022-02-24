@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 23:38:02 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/24 02:36:58 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/24 07:52:46 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void converter::convert_double(std::string s)
     if (!isdigit(s[0]) && s[0] != '-')
     {
         if (s == "nan" || s == "nanf")
-            std::cout << "double: nanf" << std::endl;
+            std::cout << "double: nan" << std::endl;
         else if (s == "+inff" || s == "+inf")
             std::cout << "double: inf" << std::endl;
         else if (s == "-inf" || s == "-inff")

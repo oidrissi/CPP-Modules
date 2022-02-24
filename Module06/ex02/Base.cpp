@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 03:29:50 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/24 07:21:31 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/24 07:46:27 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void identify(Base& p)
         (void)a;
         std::cout << "A" << std::endl;
     }
-    catch(std::bad_cast e)
+    catch(std::bad_cast f)
     {
         try
         {
@@ -73,7 +73,7 @@ void identify(Base& p)
             (void)b;
             std::cout << "B" << std::endl;
         }
-        catch(std::bad_cast e)
+        catch(std::bad_cast se)
         {
             try
             {
@@ -81,7 +81,7 @@ void identify(Base& p)
                 (void)c;
                 std::cout << "C" << std::endl;
             }
-            catch(std::bad_cast se)
+            catch(std::bad_cast es)
             {
                 std::cout << "Problem" << std::endl;
             }
@@ -91,6 +91,8 @@ void identify(Base& p)
 
 int main()
 {
+    // dynamic_cast conversion
+    // Safely converts pointers and references to classes up, down, and sideways along the inheritance hierarchy.
     Base *b = generate();
     std::cout << "Type Using ref: ";
     identify(b);

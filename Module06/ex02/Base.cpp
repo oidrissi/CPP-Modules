@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 03:29:50 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/24 06:40:51 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/24 07:11:37 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,17 @@ Base * generate(void)
     {
         case 0:
         {
+            std::cout << "A: " << std::endl;
             return new A;
         }
         case 1:
         {
+            std::cout << "B: " << std::endl;
             return new B;
         }
         case 2:
         {
+            std::cout << "C: " << std::endl;
             return new C;
         }
         default:
@@ -78,7 +81,7 @@ void identify(Base& p)
                 (void)c;
                 std::cout << "C" << std::endl;
             }
-            catch(std::bad_cast e)
+            catch(std::bad_cast se)
             {
                 std::cout << "Problem" << std::endl;
             }
@@ -89,7 +92,9 @@ void identify(Base& p)
 int main()
 {
     Base *b = generate();
+    std::cout << "Type Using ref: ";
     identify(b);
+    std::cout << "Type Using Pointer: ";
     identify(*b);
     return 0;
 }

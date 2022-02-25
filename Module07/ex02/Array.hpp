@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 08:41:02 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/25 01:20:21 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/25 01:43:02 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,12 @@ class Array
                 throw std::exception();
             return this->_array[index];
         }
-
+        A const &	operator[](unsigned int index) const
+        {
+            if (index >= this->_size)
+                throw std::exception();
+            return this->_array[index];
+        }
         unsigned int	size(void) const
         {
             return this->_size;
@@ -71,8 +76,5 @@ class Array
         A *		        _array;
         unsigned int	_size;
 };
-
-
-int main( void );
 
 #endif

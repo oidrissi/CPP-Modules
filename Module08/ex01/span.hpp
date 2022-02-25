@@ -13,6 +13,25 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <exception>
 
+class Span
+{
+    public:
+        Span();
+        Span(unsigned int n);
+        Span(Span & src);
+        ~Span();
+        Span &operator=(Span & rhs);
+        void addNumber(int n);
+        int shortestSpan();
+        int longestSpan();
+    private:
+        unsigned int _n;
+        int *_tab;
+};
 
 #endif

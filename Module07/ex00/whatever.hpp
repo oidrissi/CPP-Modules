@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 08:24:55 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/25 01:18:37 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/25 01:33:41 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 template <typename T>
-void swap(T one, T two)
+void swap(T& one, T &two)
 {
     T temp = one;
     one = two;

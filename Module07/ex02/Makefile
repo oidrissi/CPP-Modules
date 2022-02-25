@@ -6,13 +6,13 @@
 #    By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 13:01:44 by oidrissi          #+#    #+#              #
-#    Updated: 2022/02/24 21:47:08 by oidrissi         ###   ########.fr        #
+#    Updated: 2022/02/25 00:07:50 by oidrissi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++
 OBJ = $(SRC:.cpp=.o)
-EXE = iter
+EXE = Array
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp
 

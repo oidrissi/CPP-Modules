@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 08:41:02 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/24 22:34:01 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/25 01:08:04 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,59 @@
 #include <iostream>
 #include <string>
 
-template <typename A, std::size_t L>
-class Array{
+template <class A>
+class Array
+{
+    public:
+        Array(void)
+        {
+            this->_size = 0;
+            this->_array = NULL;
+        }
+        Array(unsigned int n)
+        {
+            this->_size = n;
+            this->_array = new A[n];
+        }
+        Array(Array & src)
+        {
+            this->_size = src.size();
+            this->_array = new A[this->_size];
+            for (unsigned int i = 0; i < this->_size; i++)
+                this->_array[i] = src[i];
+        }
+        ~Array(void)
+        {
+            delete [] this->_array;
+        }
 
- public:
-    Array(void)
-    {
-        new A[L];
-    }
-    Array(unsigned int n)
-    {
-        new A[L];
-        
-    }
-    Array(Array const &src)
-    {
-        A[] = {};
-        for (size_t i = 0; i < L; i++)
-            A[i] = src.A[i];
-    }
-    ~Array(void)
-    {
-        delete [] A;
-    }
-    std::size_t getSize() const
-    {
-        return L;
-    }
+        Array &	operator=(Array & rhs)
+        {
+            if (this != &rhs)
+            {
+                delete [] this->_array;
+                this->_size = rhs.size();
+                this->_array = new A[this->_size];
+                for (unsigned int i = 0; i < this->_size; i++)
+                    this->_array[i] = rhs[i];
+            }
+            return *this;
+        }
+        A &		operator[](unsigned int index)
+        {
+            if (index >= this->_size)
+                throw std::exception();
+            return this->_array[index];
+        }
 
-private:
-    A elem[L];
+        unsigned int	size(void) const
+        {
+            return this->_size;
+        }
+
+    private:
+        A *		_array;
+        unsigned int	_size;
 };
 
 

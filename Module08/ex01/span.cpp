@@ -6,7 +6,7 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 02:39:51 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/26 23:03:55 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/26 23:10:23 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ Span &Span::operator=(Span const &rhs)
     return *this;
 }
 
+
+// add numbers to the span using iterator
 void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
     unsigned int i = 0;
@@ -67,6 +69,8 @@ void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterat
     }
 }
 
+
+//only adds a number if there is no 0 in the array's elements
 void Span::addNumber(int n)
 {
     if (_n == 0)
@@ -86,6 +90,7 @@ void Span::addNumber(int n)
     }
 }
 
+// traverse the array and do the difference of i element with i + j element, find the smallest difference, return it
 int Span::shortestSpan()
 {
     int diff;
@@ -103,6 +108,8 @@ int Span::shortestSpan()
     return diff;
 }
 
+
+//look for min and max and calculate diff
 int Span::longestSpan()
 {
     if (_n == 0)

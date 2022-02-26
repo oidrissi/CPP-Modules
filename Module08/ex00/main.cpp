@@ -6,11 +6,13 @@
 /*   By: oidrissi <oidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 02:37:05 by oidrissi          #+#    #+#             */
-/*   Updated: 2022/02/25 18:33:07 by oidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/26 23:03:16 by oidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
+
+// an iterator is an object that can be used to access/traverse the elements of a container
 
 int main()
 {

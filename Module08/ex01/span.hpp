@@ -23,10 +23,11 @@ class Span
     public:
         Span();
         Span(unsigned int n);
-        Span(Span & src);
+        Span(Span const & src);
         ~Span();
-        Span &operator=(Span & rhs);
+        Span &operator=(Span const & rhs);
         void addNumber(int n);
+        void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
         int shortestSpan();
         int longestSpan();
     private:
